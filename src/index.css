@@ -8,49 +8,34 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Deep space blacks and purples */
-    --background: 240 10% 4%;
-    --foreground: 280 20% 95%;
-
-    /* Card system with subtle purple undertones */
-    --card: 240 15% 6%;
-    --card-foreground: 280 15% 92%;
-
-    --popover: 240 20% 8%;
-    --popover-foreground: 280 15% 95%;
-
-    /* Primary purple energy */
-    --primary: 270 80% 60%;
-    --primary-foreground: 240 10% 4%;
-    --primary-glow: 270 100% 75%;
-
-    /* Secondary deep purple */
-    --secondary: 260 30% 15%;
-    --secondary-foreground: 280 20% 90%;
-
-    /* Muted tones for subtle elements */
-    --muted: 240 20% 12%;
-    --muted-foreground: 270 10% 65%;
-
-    /* Accent neon purple */
-    --accent: 285 95% 70%;
-    --accent-foreground: 240 10% 4%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 280 20% 95%;
-
-    /* Borders with purple glow */
-    --border: 260 40% 18%;
-    --input: 240 25% 10%;
-    --ring: 270 80% 60%;
+    /* Base colors with black, silver, grey and white theme */
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 0% 85%;
+    --primary-foreground: 0 0% 8%;
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 0 0% 70%;
+    --accent-foreground: 0 0% 8%;
+    --destructive: 0 62% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 85%;
 
     --radius: 0.75rem;
 
-    /* Futuristic gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 50%, hsl(var(--primary-glow)) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(260 25% 8%) 100%);
-    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.2) 0%, transparent 70%);
-    --gradient-border: linear-gradient(90deg, hsl(var(--border)) 0%, hsl(var(--primary) / 0.5) 50%, hsl(var(--border)) 100%);
+    /* Advanced gradient definitions for silver/grey effects */
+    --gradient-hero: radial-gradient(ellipse at center, hsl(var(--primary) / 0.15), transparent 70%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--secondary)));
+    --gradient-glow: radial-gradient(circle, hsl(var(--primary) / 0.3), hsl(var(--accent) / 0.2));
+    --gradient-border: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.5), transparent);
 
     /* Shadows and glows */
     --shadow-neon: 0 0 20px hsl(var(--primary) / 0.3), 0 0 40px hsl(var(--primary) / 0.2);
@@ -61,15 +46,15 @@ All colors MUST be HSL.
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    /* Sidebar colors updated for theme */
-    --sidebar-background: 240 15% 6%;
-    --sidebar-foreground: 280 15% 90%;
-    --sidebar-primary: 270 80% 60%;
-    --sidebar-primary-foreground: 240 10% 4%;
-    --sidebar-accent: 260 30% 15%;
-    --sidebar-accent-foreground: 280 20% 90%;
-    --sidebar-border: 260 40% 18%;
-    --sidebar-ring: 270 80% 60%;
+    /* Sidebar colors updated for black/silver theme */
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 0 0% 85%;
+    --sidebar-primary-foreground: 0 0% 8%;
+    --sidebar-accent: 0 0% 20%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 0 0% 85%;
   }
 
 }

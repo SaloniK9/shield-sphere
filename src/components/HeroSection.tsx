@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
-import { Shield, ArrowRight, Zap, Lock, Cpu } from 'lucide-react';
+import { ArrowRight, Zap, Lock, Cpu } from 'lucide-react';
 import { Button } from './ui/button';
+import Beams from './Beams';
 
 const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -63,20 +64,23 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-card">
-      {/* Animated Background Particles */}
-      <div ref={particlesRef} className="particle-bg">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="w-1 h-1 bg-primary rounded-full blur-sm"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-          />
-        ))}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Beams Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <Beams
+          beamWidth={2}
+          beamHeight={15}
+          beamNumber={12}
+          lightColor="#ffffff"
+          speed={2}
+          noiseIntensity={1.75}
+          scale={0.2}
+          rotation={0}
+        />
       </div>
+      
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-background/80" />
 
       {/* Floating Icons */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -92,7 +96,7 @@ const HeroSection = () => {
           }}
           className="absolute top-20 left-10 text-primary/20"
         >
-          <Shield className="w-16 h-16" />
+          <Lock className="w-16 h-16" />
         </motion.div>
         
         <motion.div
@@ -106,9 +110,9 @@ const HeroSection = () => {
             ease: "easeInOut",
             delay: 1,
           }}
-          className="absolute top-40 right-20 text-accent/20"
+          className="absolute top-40 right-20 text-primary/30"
         >
-          <Lock className="w-12 h-12" />
+          <Zap className="w-12 h-12" />
         </motion.div>
 
         <motion.div
@@ -122,7 +126,7 @@ const HeroSection = () => {
             ease: "easeInOut",
             delay: 2,
           }}
-          className="absolute bottom-40 left-20 text-primary/30"
+          className="absolute bottom-40 left-20 text-primary/25"
         >
           <Cpu className="w-14 h-14" />
         </motion.div>
@@ -138,9 +142,9 @@ const HeroSection = () => {
             ease: "easeInOut",
             delay: 0.5,
           }}
-          className="absolute bottom-20 right-10 text-accent/25"
+          className="absolute bottom-20 right-10 text-primary/20"
         >
-          <Zap className="w-10 h-10" />
+          <Lock className="w-10 h-10" />
         </motion.div>
       </div>
 
@@ -154,8 +158,12 @@ const HeroSection = () => {
           className="mb-8 flex justify-center"
         >
           <div className="relative p-6">
-            <div className="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center glow-effect">
-              <Shield className="w-12 h-12 text-primary-foreground" />
+            <div className="w-24 h-24 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center glow-effect backdrop-blur-sm border border-primary/30">
+              <img 
+                src="/lovable-uploads/667b2bbd-c060-461e-8fa4-1703041d863c.png" 
+                alt="ShieldSphere Logo" 
+                className="w-16 h-16 object-contain filter brightness-110"
+              />
             </div>
             <div className="absolute inset-0 rounded-full bg-gradient-glow blur-2xl opacity-40 pulse-glow" />
           </div>
@@ -163,7 +171,7 @@ const HeroSection = () => {
 
         {/* Title */}
         <h1 className="hero-title text-5xl md:text-7xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-primary via-foreground to-primary bg-clip-text text-transparent">
             ShieldSphere
           </span>
         </h1>
@@ -215,7 +223,7 @@ const HeroSection = () => {
             { number: '1000+', label: 'Threat Detection' },
           ].map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <div className="text-3xl font-bold bg-gradient-to-r from-primary to-foreground bg-clip-text text-transparent">
                 {stat.number}
               </div>
               <div className="text-muted-foreground mt-1">{stat.label}</div>
@@ -224,8 +232,6 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-glow opacity-10 pointer-events-none" />
     </section>
   );
 };

@@ -22,10 +22,14 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
             <div className="relative">
-              <Shield className="w-8 h-8 text-primary group-hover:text-accent transition-colors duration-300" />
-              <div className="absolute inset-0 bg-primary/20 rounded-full blur-lg group-hover:bg-accent/30 transition-all duration-300" />
+              <img 
+                src="/lovable-uploads/667b2bbd-c060-461e-8fa4-1703041d863c.png" 
+                alt="ShieldSphere Logo" 
+                className="w-8 h-8 object-contain filter brightness-110 group-hover:brightness-125 transition-all duration-300"
+              />
+              <div className="absolute inset-0 bg-primary/20 rounded-full blur-lg group-hover:bg-primary/30 transition-all duration-300" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-to-r from-primary to-foreground bg-clip-text text-transparent">
               ShieldSphere
             </span>
           </Link>
