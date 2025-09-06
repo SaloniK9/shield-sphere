@@ -1,16 +1,24 @@
 import { Shield, Linkedin, Instagram, Facebook, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
-
 const Footer = () => {
-  const socialLinks = [
-    { name: 'LinkedIn', icon: Linkedin, href: '#' },
-    { name: 'Instagram', icon: Instagram, href: '#' },
-    { name: 'Facebook', icon: Facebook, href: '#' },
-    { name: 'Website', icon: ExternalLink, href: '#' },
-  ];
-
-  return (
-    <footer className="bg-card border-t border-border">
+  const socialLinks = [{
+    name: 'LinkedIn',
+    icon: Linkedin,
+    href: '#'
+  }, {
+    name: 'Instagram',
+    icon: Instagram,
+    href: '#'
+  }, {
+    name: 'Facebook',
+    icon: Facebook,
+    href: '#'
+  }, {
+    name: 'Website',
+    icon: ExternalLink,
+    href: '#'
+  }];
+  return <footer className="bg-card border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and Tagline */}
@@ -49,27 +57,21 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-foreground">Connect With Us</h3>
             <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <motion.a
-                  key={social.name}
-                  href={social.href}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="p-2 rounded-lg bg-muted hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-200 group"
-                >
+              {socialLinks.map(social => <motion.a key={social.name} href={social.href} whileHover={{
+              scale: 1.1
+            }} whileTap={{
+              scale: 0.95
+            }} className="p-2 rounded-lg bg-muted hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-200 group">
                   <social.icon className="w-5 h-5" />
                   <span className="sr-only">{social.name}</span>
-                </motion.a>
-              ))}
+                </motion.a>)}
             </div>
           </div>
         </div>
 
         <div className="mt-8 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-muted-foreground">
-              © 2024 ShieldSphere. All rights reserved.
-            </p>
+            <p className="text-sm text-muted-foreground">© 2025 ShieldSphere. All rights reserved.</p>
             <div className="flex space-x-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-primary transition-colors duration-200">
                 Privacy Policy
@@ -81,8 +83,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
